@@ -11,8 +11,6 @@ pid "#{APP_DIR}/tmp/pids/unicorn.pid"
 stderr_path "#{APP_DIR}/log/unicorn.stderr.log"
 stdout_path "#{APP_DIR}/log/unicorn.stdout.log"
 
-set :unicorn_pid, lambda { "#{deploy_to}/#{shared_path}/tmp/pids/rubytea_unicorn.pid" }
-
 GC.respond_to?(:copy_on_write_friendly=) and
   GC.copy_on_write_friendly = true
 
