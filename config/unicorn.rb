@@ -1,4 +1,4 @@
-APP_DIR = File.expand_path("../../", __FILE__)
+APP_DIR = "/home/deploy/www/rubytea/current"
 
 preload_app true
 worker_processes 2
