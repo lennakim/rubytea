@@ -7,7 +7,7 @@ working_directory APP_DIR
 listen "/tmp/rubytea_unicorn.sock", backlog: 64
 timeout 30
 
-pid "#{APP_DIR}/tmp/pids/rubytea_unicorn.pid"
+pid "#{APP_DIR}/tmp/pids/unicorn.pid"
 
 stderr_path "#{APP_DIR}/log/unicorn.stderr.log"
 stdout_path "#{APP_DIR}/log/unicorn.stdout.log"

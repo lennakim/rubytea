@@ -15,7 +15,7 @@ set :branch, 'master'
 set :keep_releases, 20
 set :forward_agent, true  # SSH forward_agent.
 
-set :unicorn_pid, lambda { "#{deploy_to}/#{shared_path}/tmp/pids/rubytea_unicorn.pid" }
+set :unicorn_pid, lambda { "#{deploy_to}/#{shared_path}/tmp/pids/unicorn.pid" }
 
 set :shared_paths, [
   'config/database.yml',
