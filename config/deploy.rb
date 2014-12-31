@@ -17,7 +17,11 @@ set :forward_agent, true  # SSH forward_agent.
 
 set :unicorn_pid, lambda { "#{deploy_to}/#{shared_path}/tmp/pids/rubytea_unicorn.pid" }
 
-set :shared_paths, ['config/database.yml', 'log']
+set :shared_paths, [
+  'config/database.yml',
+  'config/secrets.yml',
+  'log'
+]
 
 task :environment do
   invoke :'rbenv:load'
@@ -32,6 +36,9 @@ task setup: :environment do
 
   queue! %[touch "#{deploy_to}/#{shared_path}/config/database.yml"]
   queue  %[echo "-----> Be sure to edit '#{deploy_to}/#{shared_path}/config/database.yml'."]
+
+  queue! %[touch "#{deploy_to}/#{shared_path}/config/secrets.yml"]
+  queue  %[echo "-----> Be sure to edit '#{deploy_to}/#{shared_path}/config/secrets.yml'."]
 end
 
 desc "Deploys the current version to the server."
