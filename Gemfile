@@ -12,6 +12,8 @@ gem 'bootstrap-sass'
 
 gem 'devise', '~> 3.4.1'
 gem 'cancancan'
+gem 'carrierwave'
+gem "mini_magick"
 
 group :production do
   gem 'unicorn'
