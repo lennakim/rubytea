@@ -10,12 +10,16 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass'
 
+gem 'devise', '~> 3.4.1'
+gem 'cancancan'
+
 group :production do
   gem 'unicorn'
   gem 'mina'
 end
 
 group :development, :test do
+  gem "quiet_assets", "~> 1.0.2"
   gem 'byebug'
   gem 'web-console', '~> 2.0'
 end
