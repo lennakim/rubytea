@@ -3,7 +3,7 @@ require 'mina/rails'
 require 'mina/git'
 require 'mina/rbenv'
 
-set :domain, '104.131.132.152'
+set :domain, 'rubytea.com'
 set :user, 'deploy'
 
 set :deploy_to, '/home/deploy/www/rubytea'
