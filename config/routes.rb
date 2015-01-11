@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   root 'home#index'
 
   draw :admin
+
+  match 'users/:id' => 'users#show', via: :get, as: 'user'
 end
