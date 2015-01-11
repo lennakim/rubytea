@@ -1,39 +1,42 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container form-user">
+  <h2>编辑信息</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+    </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :password, "密码" %> <i>（如果你不想修改密码，下面两项不用填写）</i><br />
+      <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation, "密码确认" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :current_password, "当前密码" %> <i>（需要输入你的当前密码才能修改成功）</i><br />
+      <%= f.password_field :current_password, autocomplete: "off", :class => "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "更新", :class => "btn btn-lg btn-primary btn-block" %>
+    </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <h3>取消我的账户</h3>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+  <p>在这里玩的不开心么？如果有任何问题，你都可以和社区内的小伙伴们联系，或者找到管理员来帮助你。</p>
+  <p>如果你真的确定要取消你的账户， 请点击这个链接：<%= button_to "取消我的账户", registration_path(resource_name), data: { confirm: "确认取消么?" }, :class => "btn btn-sm btn-danger ", method: :delete %></p>
+  欢迎你随时回到我们RubyTea的大家庭 ：）
+  <p><%= link_to "返回上一个页面", :back %></p>
+</div> <!-- /container -->
