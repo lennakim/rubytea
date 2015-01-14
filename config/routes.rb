@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update]
 
+  resources :events, only: [:index, :show ]
+
   root 'home#index'
   draw :admin
 end
