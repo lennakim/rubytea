@@ -1,5 +1,5 @@
 module Admin
-  class UsersController < BaseController
+  class EventsController < BaseController
     def index
 
     end
@@ -31,11 +31,11 @@ module Admin
     private
 
     def user_params
-      params.require(:user).permit!
+      params.require(:event).permit!
     end
 
-    def set_user
-      @user = User.find(params[:id])
+    def set_event
+      @event = Event.find(params[:id])
     end
   end
 end
