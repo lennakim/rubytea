@@ -4,6 +4,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def set_admin(oth_user)
+    oth_user.update_attribute(role: :admin) if self.admin?
+  end
+
   def admin?
     role == "admin" || role == :admin
   end
