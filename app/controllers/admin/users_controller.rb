@@ -1,7 +1,9 @@
 module Admin
   class UsersController < BaseController
-    def index
+    before_action :set_user, except: [:index, :new, :create]
 
+    def index
+      @users = User.page(params[:page])
     end
 
     def show

@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.page(params[:page])
+    @events = Event.recent.page(params[:page])
   end
 
   def show

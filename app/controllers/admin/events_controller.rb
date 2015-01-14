@@ -1,7 +1,9 @@
 module Admin
   class EventsController < BaseController
-    def index
+    before_action :set_event, except: [:index, :new, :create]
 
+    def index
+      @events = Event.recent.page(params[:page])
     end
 
     def show
@@ -30,7 +32,7 @@ module Admin
 
     private
 
-    def user_params
+    def event_params
       params.require(:event).permit!
     end
 
