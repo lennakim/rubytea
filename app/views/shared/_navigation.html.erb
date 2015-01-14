@@ -9,6 +9,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li><%= link_to current_user.login, current_user %></li>
+          <li><%= link_to "后台", admin_dashboard_path if current_user.admin? %></li>
           <li><%= link_to "退出", destroy_user_session_path, method: "delete" %></li>
         <% else %>
           <li><%= link_to "登录", user_session_path %></li>

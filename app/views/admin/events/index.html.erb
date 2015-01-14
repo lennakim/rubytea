@@ -1,0 +1,31 @@
+<h2>线下活动列表</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>title</th>
+      <th>subtitle</th>
+      <th>start_at</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td>
+          <%= link_to event.title, admin_event_path(event) %>
+        </td>
+        <td><%= event.subtitle %></td>
+        <td><%= format_datetime(event.start_at) %></td>
+        <td>
+          <%= link_to t(:edit), edit_admin_event_path(event) %>
+        </td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @events %>
+
+<%= link_to t(:new), new_admin_event_path %>

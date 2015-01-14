@@ -1,0 +1,13 @@
+<nav class="navbar navbar-inverse navbar-default" role="navigation">
+  <ul class="nav navbar-nav">
+    <%= nav_link User.model_name.human, admin_users_path, 'users' %>
+    <%= nav_link Event.model_name.human, admin_events_path, 'events' %>
+  </ul>
+
+  <ul class="nav navbar-nav navbar-right" style="margin-right: 0;">
+    <li>
+      <p class="navbar-text"><%= current_user.login %></p>
+    </li>
+    <li><%= link_to "返回前台", root_path %> </li>
+  </ul>
+</nav>

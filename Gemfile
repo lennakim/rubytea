@@ -14,6 +14,9 @@ gem 'devise', '~> 3.4.1'
 gem 'cancancan'
 gem 'carrierwave'
 gem "mini_magick"
+gem "kaminari"
+gem 'simple_form'
+gem 'rails-i18n'
 
 group :production do
   gem 'unicorn'
