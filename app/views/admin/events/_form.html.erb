@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-md-12">
+    <%= simple_form_for [:admin, @event] do |f| %>
+      <%= f.input :title %>
+      <%= f.input :subtitle %>
+      <%= f.input :price %>
+      <%= f.input :address %>
+      <%= f.input :body %>
+      <%= f.input :limit_num %>
+      <%= f.input :start_at %>
+      <%= f.button :wrapped %>
+    <% end %>
+  </div>
+</div>
