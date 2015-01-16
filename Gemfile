@@ -28,3 +28,5 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
 end
+
+gem 'font-awesome-rails', '4.1.0'
