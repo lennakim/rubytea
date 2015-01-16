@@ -1,0 +1,26 @@
+
+<p>
+  <strong>title:</strong>
+  <%= @event.title %>
+</p>
+<p>
+  <strong>subtitle:</strong>
+  <%= @event.subtitle %>
+</p>
+<p>
+  <strong>body:</strong>
+  <%= @event.body %>
+</p>
+
+<p>
+  <strong>address:</strong>
+  <%= @event.address %>
+</p>
+
+<p>
+  <strong>start_at:</strong>
+  <%= format_datetime(@event.start_at) %>
+</p>
+
+<%= link_to t(:edit), edit_admin_event_path(@event) %> |
+<%= link_to t(:back), admin_events_path %>
