@@ -1,7 +1,14 @@
-      <%= @event.title %>
-      <%= @event.subtitle %>
-      <%= @event.price %>
-      <%= @event.address %>
-      <%= @event.body %>
-      <%= @event.limit_num %>
-      <%= @event.start_at %>
+<section class="main-content">
+  <h1 class="section-title">活动名称</h1>
+  <%= @event.title %>
+  <h1 class="section-title">活动时间</h1>
+  <%= @event.start_at %>
+  <h1 class="section-title">价格</h1>
+  <%= @event.price %>
+  <h1 class="section-title">活动地点</h1>
+  <%= @event.address %>
+  <h1 class="section-title">活动介绍</h1>
+  <%= @event.body %>
+  <h1 class="section-title">活动人数</h1>
+  <%= @event.limit_num %>
+</section>
