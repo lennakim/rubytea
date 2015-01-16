@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  scope :recent, -> { order(created_at: :desc) }
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
