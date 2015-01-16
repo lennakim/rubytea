@@ -20,6 +20,7 @@
         <td><%= format_datetime(event.start_at) %></td>
         <td>
           <%= link_to t(:edit), edit_admin_event_path(event) %>
+          <%= link_to t(:delete), admin_event_path(event), method: :delete, data: { confirm: t(:del_confirm) } %>
         </td>
 
       </tr>
