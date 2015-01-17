@@ -1,0 +1,20 @@
+.section-title {
+  font-size: 19px;
+  padding-bottom: 11px;
+  margin: 50px 0 25px;
+  font-weight: normal;
+  position: relative;
+}
+.section-title:after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 0;
+  border-bottom: 1px solid #7F7F7F;
+  bottom: -1px;
+  left: 0;
+}
+.title {
+  font-size: 33px;
+  font-weight: normal;
+}
