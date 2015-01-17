@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   scope :recent, -> { order(created_at: :desc) }
+  has_many :comments
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

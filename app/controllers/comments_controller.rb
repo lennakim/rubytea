@@ -9,10 +9,11 @@ class CommentsController < ApplicationController
   def new
     @comment = @commentable.comments.new
   end
-    
+
   def create
     @comment = @commentable.comments.new(comment_params)
     @comment.author = current_user.login
+    @comment.user = current_user
     if @comment.save
       redirect_to @commentable, notice: "Comment created."
     else
@@ -29,7 +30,7 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:content, :author)
+    params.require(:comment).permit(:content, :author, :user_id)
   end
 
 
