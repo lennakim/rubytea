@@ -13,3 +13,12 @@
     <%= @event.limit_num %>
   </section>
 </div>
+
+<p><%= link_to "Back to Events", events_path %></p>
+
+<div class="container">
+    <h2>Comments</h2>
+
+    <%= render "comments/comments" %>
+    <%= render "comments/form" %>
+</div>

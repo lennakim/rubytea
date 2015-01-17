@@ -5,13 +5,18 @@ class ActionDispatch::Routing::Mapper
 end
 
 Rails.application.routes.draw do
+
+
   get 'home/index'
 
   devise_for :users, path: "account"
 
   resources :users, only: [:show, :edit, :update]
 
-  resources :events, only: [:index, :show ]
+  resources :events, only: [:index, :show ] do
+    resources :comments
+  end
+
 
   root 'home#index'
   draw :admin
