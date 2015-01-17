@@ -30,3 +30,5 @@ group :development, :test do
 end
 
 gem 'font-awesome-rails', '4.1.0'
+
+gem 'redcarpet'
