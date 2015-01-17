@@ -11,12 +11,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.text_area :content, rows: 8 %>
+    <%= f.text_area :content, rows: 5, class: "form-control" %>
   </div>
 
-
-
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions comment-actions">
+    <%= f.submit "提交评论", class: "btn btn-primary" %>
   </div>
 <% end %>

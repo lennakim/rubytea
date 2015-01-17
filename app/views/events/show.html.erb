@@ -14,11 +14,13 @@
   </section>
 </div>
 
-<p><%= link_to "Back to Events", events_path %></p>
-
 <div class="container">
     <h1 class="section-title">评论</h1>
 
     <%= render "comments/comments" %>
-    <%= render "comments/form" %>
+    <% if current_user %>
+      <%= render "comments/form" %>
+    <% else %>
+      <%= link_to "登录", user_session_path %>或<%= link_to "注册", new_user_registration_path %>才能发表评论
+    <% end %>
 </div>
