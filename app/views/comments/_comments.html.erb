@@ -2,6 +2,8 @@
   <% @comments.each do |comment| %>
     <div class="comment">
       <%= simple_format comment.content %>
+      <strong><%= simple_format comment.author %></strong>
     </div>
   <% end %>
 </div>
+
