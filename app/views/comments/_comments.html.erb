@@ -1,9 +1,11 @@
-<div id="comments">
+<ul id="comments" class="comment-list">
   <% @comments.each do |comment| %>
-    <div class="comment">
-      <%= simple_format comment.content %>
-      <strong><%= simple_format comment.author %></strong>
-    </div>
+    <li class="comment-item">
+      <%= link_to simple_format(comment.author), user_path(comment.author), :class=> "comment-author" %>
+      <div class="comment-content">
+        <%= simple_format comment.content %>
+      </div>
+    </li>
   <% end %>
-</div>
+</ul>
 
