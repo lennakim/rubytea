@@ -4,7 +4,7 @@
         <ul class="event-list">
           <% @events.each do |event| %>
             <li>
-              <time datetime="<%= event.start_at.strftime("%Y-%m-%d %H:%M") %>">
+              <time datetime="<%= format_datetime(event.start_at, "%Y-%m-%d %H:%M")%>">
                 <span class="day"><%= event.start_at.strftime("%d") %></span>
                 <span class="month"><%= event.start_at.strftime("%m") %></span>
                 <span class="year"><%= event.start_at.strftime("%Y") %></span>

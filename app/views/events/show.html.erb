@@ -3,7 +3,7 @@
     <section class="main-content col-xs-12 col-sm-12 col-md-8 ">
       <h1 class="title"><%= @event.title %></h1>
       <h1 class="section-title">活动时间</h1>
-      <%= @event.start_at.strftime("%Y-%m-%d %H:%M") %>
+      <%= format_datetime(@event.start_at, "%Y-%m-%d %H:%M") %>
       <h1 class="section-title">活动地点</h1>
       <%= @event.address %>
       <h1 class="section-title">所需费用</h1>
