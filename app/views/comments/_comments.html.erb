@@ -1,7 +1,7 @@
 <ul id="comments" class="comment-list">
   <% @comments.each do |comment| %>
     <li class="comment-item">
-      <%= link_to comment.author, user_path(comment.user), :class=> "comment-author" %>
+      <%= link_to comment.user.login, user_path(comment.user), :class=> "comment-author" %>
       <span class="comment-time"><%= comment.created_at.strftime("%Y-%m-%d %H:%M") %></span>
       <div class="comment-content">
         <%= comment.content %>
