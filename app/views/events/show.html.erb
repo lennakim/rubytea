@@ -1,28 +1,32 @@
 <div class="container">
-  <section class="main-content col-md-8">
-    <h1 class="title"><%= @event.title %></h1>
-    <h1 class="section-title">活动时间</h1>
-    <%= @event.start_at.strftime("%Y-%m-%d %H:%M") %>
-    <h1 class="section-title">活动地点</h1>
-    <%= @event.address %>
-    <h1 class="section-title">所需费用</h1>
-    <%= @event.price %>
-    <h1 class="section-title">活动介绍</h1>
-    <%= markdown(@event.body) %>
-    <h1 class="section-title">活动人数</h1>
-    <%= @event.limit_num %>
-  </section>
+  <div class="row">
+    <section class="main-content col-xs-12 col-sm-12 col-md-8 ">
+      <h1 class="title"><%= @event.title %></h1>
+      <h1 class="section-title">活动时间</h1>
+      <%= @event.start_at.strftime("%Y-%m-%d %H:%M") %>
+      <h1 class="section-title">活动地点</h1>
+      <%= @event.address %>
+      <h1 class="section-title">所需费用</h1>
+      <%= @event.price %>
+      <h1 class="section-title">活动介绍</h1>
+      <%= markdown(@event.body) %>
+      <h1 class="section-title">活动人数</h1>
+      <%= @event.limit_num %>
+    </section>
+  </div>
 </div>
 
 <div class="container">
-  <section class="main-content col-md-8">
-    <h1 class="section-title">评论</h1>
+  <div class="row">
+    <section class="main-content col-xs-12 col-sm-12 col-md-8 ">
+      <h1 class="section-title">评论</h1>
 
-    <%= render "comments/comments" %>
-    <% if current_user %>
-      <%= render "comments/form" %>
-    <% else %>
-      <%= link_to "登录", user_session_path %>或<%= link_to "注册", new_user_registration_path %>才能发表评论
-    <% end %>
-  </section>
+      <%= render "comments/comments" %>
+      <% if current_user %>
+        <%= render "comments/form" %>
+      <% else %>
+        <%= link_to "登录", user_session_path %>或<%= link_to "注册", new_user_registration_path %>才能发表评论
+      <% end %>
+    </section>
+  </div>
 </div>
