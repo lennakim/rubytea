@@ -1,22 +1,27 @@
 <nav class="navbar navbar-default">
   <div class="container">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">RubyTea</a>
-      <%= link_to "活动", events_path, class: "navbar-brand" %>
-    </div>
+    <div class="row">
+      <div class="col-xs-8 col-sm-8 col-md-8">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">RubyTea</a>
+          <%= link_to "活动", events_path, class: "navbar-brand" %>
+        </div>
+      </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          <li><%= link_to current_user.login, current_user %></li>
-          <li><%= link_to "后台", admin_dashboard_path if current_user.admin? %></li>
-          <li><%= link_to "退出", destroy_user_session_path, method: "delete" %></li>
-        <% else %>
-          <li><%= link_to "登录", user_session_path %></li>
-          <li><%= link_to "注册", new_user_registration_path %></li>
-        <% end %>
-      </ul>
-    </div><!-- /.navbar-collapse -->
+      <div class="col-xs-4 col-sm-4 col-md-4">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+              <li><%= link_to current_user.login, current_user %></li>
+              <li><%= link_to "后台", admin_dashboard_path if current_user.admin? %></li>
+              <li><%= link_to "退出", destroy_user_session_path, method: "delete" %></li>
+            <% else %>
+              <li><%= link_to "登录", user_session_path %></li>
+              <li><%= link_to "注册", new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
   </div><!-- /.container -->
 </nav>

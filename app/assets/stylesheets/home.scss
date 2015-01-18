@@ -29,6 +29,10 @@
   margin-top: -150px;
 }
 
+.col-xs-12 .carousel-inner > .item > img {
+  max-width: none;
+}
+
 html {
   position: relative;
   min-height: 100%;
@@ -101,10 +105,14 @@ body {
   font-weight: 700;
   margin: 0px;
 }
+.event-list > li > .info > .title,
 .event-list > li > .info > .desc {
-  font-size: 13pt;
-  font-weight: 300;
-  margin: 0px;
+  padding: 6px 15px;;
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 2em;
 }
 .event-list > li > .info > ul {
   display: table;
@@ -161,15 +169,6 @@ body {
     height: 120px;
     text-align: left;
     padding-right: 40px;
-  }
-  .event-list > li > .info > .title,
-  .event-list > li > .info > .desc {
-    padding: 6px 15px;;
-    width: 100%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    height: 2em;
   }
   .event-list > li > .info > ul {
     position: absolute;
